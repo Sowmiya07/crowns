@@ -3,7 +3,7 @@ import {ReactComponent as Logo} from '../assets/crown.svg';
 import '../styles/Header-Styles.scss';
 import {Link} from 'react-router-dom';
 
-const Header = () => {
+const Header = ({currentUser}) => {
     return (
         <div className="header">
         <Link className="logo-container" to="/">
@@ -16,6 +16,7 @@ const Header = () => {
             <Link className="option" to="">
                 CONTACT
             </Link>
+            {currentUser ? <div>Yes</div> : <div>No</div>}
         </div>
         </div>
     )
